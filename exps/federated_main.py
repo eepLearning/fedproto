@@ -195,7 +195,7 @@ if __name__ == '__main__':
                     args.stride = [2,2]
             else:
                 args.stride = [2, 2]
-            resnet = resnet18(args, pretrained=True  , num_classes=args.num_classes)
+            resnet = resnet18(args, pretrained=True   , num_classes=args.num_classes)
             initial_weight = model_zoo.load_url(model_urls['resnet18'])
             local_model = resnet
             initial_weight_1 = local_model.state_dict()
