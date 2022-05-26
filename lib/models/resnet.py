@@ -164,6 +164,7 @@ class ResNet(nn.Module):
         return F.log_softmax(x, dim=1), x1
 
 
+
 def resnet18(args, pretrained=False, **kwargs):
     """Constructs a ResNet-18 model.
 
