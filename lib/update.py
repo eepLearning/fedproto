@@ -528,6 +528,8 @@ def test_inference_new_het_lt(args, local_model_list, test_dataset, classes_list
             loss_list.append(loss2)
 
     return acc_list_l, acc_list_g, loss_list
+    #acc_list_g가 proto 있는거
+    #acc_list_l가 proto 있는거
 
 
 def save_protos(args, local_model_list, test_dataset, user_groups_gt):
