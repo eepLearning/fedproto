@@ -210,6 +210,12 @@ if __name__ == '__main__':
         local_model_list.append(local_model)
 
     if args.mode == 'task_heter':
+        acc_list_l, acc_list_g = test_inference_new_het_lt(args, local_model_list, test_dataset, classes_list,
+                                                           user_groups_lt, global_protos)
+        print('For all users (with protos), mean of test acc is {:.5f}, std of test acc is {:.5f}'.format(
+            np.mean(acc_list_g), np.std(acc_list_g)))
+        print('For all users (w/o protos), mean of test acc is {:.5f}, std of test acc is {:.5f}'.format(
+            np.mean(acc_list_l), np.std(acc_list_l)))
         FedProto_taskheter(args, train_dataset, test_dataset, user_groups, user_groups_lt, local_model_list, classes_list)
     else:
         FedProto_modelheter(args, train_dataset, test_dataset, user_groups, user_groups_lt, local_model_list, classes_list)
